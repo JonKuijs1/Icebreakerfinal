@@ -5,15 +5,13 @@ let deckSize = cards.length - 1;
 let active;
 let startX;
 let walk = 0;
-// const maxWalk = track.offsetWidth / 2; 
-const maxWalk = 250; //how var the card will translateX
-const trigger = 200; //trigger moveToBack at 200px swiped
+const maxWalk = 250; 
+const trigger = 200;
 let isClicked = false;
 
 function init(cards, z) {
   Array.from(cards).forEach(function (card, i){
-  //cards.forEach(function (card, i) {
-    // card.style.setProperty('z-index', z);
+ 
     card.style.setProperty('z-index', card.dataset.zindex);
     if (z === deckSize){
       card.classList.add('active');
@@ -27,7 +25,7 @@ function init(cards, z) {
 
 function moveToBack(){
   Array.from(cards).forEach(function (card){
-  //cards.forEach(function(card){
+ 
     var z = parseInt(card.style.getPropertyValue('z-index'));
     if(z === deckSize){
       card.style.setProperty('z-index', 0);
@@ -79,7 +77,7 @@ function mouseUpEvent(e){
   console.log('mouse up event');
   const swiping = document.querySelector('.swiping');
   if(walk > 200){
-    //pause any video playing
+   
     const vids = swiping.querySelectorAll('video');
     Array.from(vids).forEach(function(vid){
       vid['pause']();

@@ -2,7 +2,7 @@ let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', ''];
 
 window.onload = function() {
-    blinkTurnMessage(); // Start blinking the turn message
+    blinkTurnMessage(); 
 };
 
 function makeMove(index) {
@@ -11,8 +11,8 @@ function makeMove(index) {
         renderBoard();
         if (checkWinner(currentPlayer)) {
             alert(currentPlayer + ' wins!');
-            playWinSound(); // Play the win sound
-            markWinningCells(); // Mark winning cells with animation
+            playWinSound();
+            markWinningCells(); 
             resetGame();
             return;
         }
@@ -22,8 +22,8 @@ function makeMove(index) {
             return;
         }
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        playMoveSound(); // Play the move sound
-        blinkTurnMessage(); // Start blinking the turn message for the next player
+        playMoveSound();
+        blinkTurnMessage();
     }
 }
 
@@ -51,9 +51,9 @@ function renderBoard() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach((cell, index) => {
         cell.textContent = board[index];
-        cell.classList.remove('X', 'O'); // Remove classes 'X' and 'O' from all cells
+        cell.classList.remove('X', 'O'); 
         if (board[index] === 'X' || board[index] === 'O') {
-            cell.classList.add(board[index]); // Add class 'X' or 'O' to cells containing 'X' or 'O'
+            cell.classList.add(board[index]); 
         }
     });
 }
@@ -87,7 +87,7 @@ function blinkTurnMessage() {
     const turnText = document.getElementById('turnText');
     setInterval(() => {
         turnText.style.visibility = (turnText.style.visibility === 'hidden') ? 'visible' : 'hidden';
-        // Update text content based on currentPlayer
+        
         turnText.textContent = "It's " + currentPlayer + "'s Turn 💬";
     }, 2000);
 }

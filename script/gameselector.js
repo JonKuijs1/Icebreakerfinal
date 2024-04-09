@@ -1,3 +1,5 @@
+// script makes sure it becomes a smooth caroussel
+
 const slider = document.querySelector('.gallery');
 let isDown = false;
 let startX;

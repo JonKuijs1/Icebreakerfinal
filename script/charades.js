@@ -1,6 +1,6 @@
-// Array of movie titles with corresponding emojis
+// Here we can add movies for difficulty levels
 const movies = [
-    //"Easy" level
+    //Easy
     { title: "Finding Nemo", emoji: "🔍🐠🐟", difficulty: "Easy" },
     { title: "The Lion King", emoji: "🦁👑🌅", difficulty: "Easy" },
     { title: "Toy Story", emoji: "🤠🚀🧸", difficulty: "Easy" },
@@ -8,7 +8,7 @@ const movies = [
     { title: "Aladdin", emoji: "🧞‍♂️🕌💫", difficulty: "Easy" },
     { title: "Moana", emoji: "🌊🚣‍♀️🌺", difficulty: "Easy" },
     { title: "Frozen", emoji: "❄️⛄️👑", difficulty: "Easy" },
-      //"Moderate" level
+      //Moderate 
     { title: "Harry Potter", emoji: "⚡🔮🧙‍♂️", difficulty: "Moderate" },
     { title: "Jurassic Park", emoji: "🦕🦖🌿", difficulty: "Moderate" },
     { title: "Back to the Future", emoji: "⏰🔙🚗", difficulty: "Moderate" },
@@ -16,7 +16,7 @@ const movies = [
     { title: "The Matrix", emoji: "🕶️💊💻", difficulty: "Moderate" },
     { title: "Inception", emoji: "🌀🛌🏻💭", difficulty: "Moderate" },
     { title: "The Terminator", emoji: "🤖🔫💥", difficulty: "Moderate" },
-      //"Hard" level
+      //Hard
     { title: "The Lord of the Rings", emoji: "🧝‍♂️💍🌋", difficulty: "Hard" },
     { title: "Walking Dead", emoji: "🧟🪖‍🔫", difficulty: "Hard" },
     { title: "Fight Club", emoji: "👊💥🛁", difficulty: "Hard" },
@@ -28,28 +28,25 @@ const movies = [
   
   let currentMovie;
   
-  // Function to filter movies by difficulty
+
   function filterMoviesByDifficulty(difficulty) {
     return movies.filter(movie => movie.difficulty === difficulty);
   }
   
-  // Example usage
+
   const easyMovies = filterMoviesByDifficulty("Easy");
   const moderateMovies = filterMoviesByDifficulty("Moderate");
   const hardMovies = filterMoviesByDifficulty("Hard");
   
-  // Function to randomly select a movie
   function chooseRandomMovie(difficulty) {
     const filteredMovies = movies.filter(movie => movie.difficulty === difficulty);
     return filteredMovies[Math.floor(Math.random() * filteredMovies.length)];
   }
   
-  // Function to display emojis of the current movie
   function displayMovieEmojis() {
     document.getElementById("emojiDisplay").innerText = currentMovie.emoji;
   }
   
-  // Function to check the guess
   function checkGuess() {
     const guess = document.getElementById("guessInput").value.toLowerCase();
     if (guess === currentMovie.title.toLowerCase()) {
@@ -59,7 +56,6 @@ const movies = [
     }
   }
   
-  // Function to start a new game
   function newMovie() {
     const selectedDifficulty = document.getElementById("levelSelect").value;
     currentMovie = chooseRandomMovie(selectedDifficulty);
@@ -68,5 +64,15 @@ const movies = [
     document.getElementById("result").innerText = "";
   }
   
-  // Initial setup
   window.onload = newMovie;
+
+
+  document.getElementById('difficulty').addEventListener('change', function () {
+    this.style.color = this.options[this.selectedIndex].getAttribute('data-color');
+  });
+  
+  window.onload = function() {
+    var selectElement = document.getElementById('difficulty');
+    selectElement.style.color = selectElement.options[selectElement.selectedIndex].getAttribute('data-color');
+  };
+  
