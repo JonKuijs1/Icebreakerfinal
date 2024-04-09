@@ -90,14 +90,14 @@ window.addEventListener("resize", function () {
 });
 
 //add mouse position listener, so we can make the eye move
-document.onmousemove = (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-}
+  document.onmousemove = (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }
 
 //Start the 3D rendering
 animate();
 
 //Load the file
 
-   
+

@@ -30,28 +30,3 @@ body {
   }
   
   input[type="text"], button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 1em;
-  }
-  
-  button {
-    background-color: none;
-    color: black;
-    border-radius: 50px;
-    padding: 12px 24px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    border: 1px solid black;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: black;
-    color: white;
-}

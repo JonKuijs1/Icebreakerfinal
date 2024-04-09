@@ -90,6 +90,8 @@ body{
   transition: 
     filter 200ms linear,
     transform 200ms linear;
+
+  
 }
 
 .card:hover .card__background{
@@ -125,7 +127,9 @@ body{
 
 .container {
 
-  margin-top: 48px;
+  margin-top: 84px;
+
+  
 
   .text {
 
@@ -134,9 +138,11 @@ body{
     
 
     @media (width <= 900px) {
-      font-size: 32px;
+      font-size: 28px;
       
+
     }
 
   }
 }
+

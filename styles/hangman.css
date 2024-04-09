@@ -14,9 +14,8 @@ body {
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    margin-right: 10px;
     width: calc(100% - 120px); 
-    max-width: 300px; 
+    width: 324px; 
 }
 
 button {
@@ -33,6 +32,8 @@ button {
     margin-right: auto;
     justify-content: center;
     transition: background-color 0.3s;
+    width: 324px;
+    margin-top: 24px;   
 }
 
 button:hover {

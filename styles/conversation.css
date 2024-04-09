@@ -7,7 +7,6 @@
   body{
     font-size:12px;
     min-height: 100vh;
-    font-family: 'Montserrat', sans-serif;
     background-image: linear-gradient(45deg, #f8f8f8, #e0e0e0); /* Off-white gradient */
     background-size: cover;
     color: #282387;
@@ -57,7 +56,6 @@
     background: #282387;
     color: #000000;
     border: 3px solid transparent;
-    /*border-image: linear-gradient(90deg, #001589,#0182ca);*/
     border-image-slice:1;
     display:flex;
     flex-direction:column;
@@ -87,8 +85,8 @@
       color: #f0f0f0;
     }
     &:hover {
-        background-color: #2800b7; /* Change the background color on hover */
-        box-shadow: 0 0 5px #001589; /* Add a box shadow on hover */
+        background-color: #2800b7; 
+        box-shadow: 0 0 5px #001589; 
         transform: scale(1.05) translateZ(0);
     }
   }
